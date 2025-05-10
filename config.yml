@@ -1,21 +1,21 @@
 # Main site info
 author: Jae-Hyeok Lee
 email: jaehyeok.lee@umanitoba.ca
-domain: "algalsexlab.info"
-url: "https://www.algalsexlab.info"
+domain: "Chlamy18.github.io/algalsexlab"
+url: "https://Chlamy18.github.io/algalsexlab"
 site_name: Algal Sexual Development Laboratory at University of Manitoba
 site_description: Developmental Evolutionary Biology, Molecular Genetics, University of Manitoba, Laboratory Researcher, Chlamydomonas reinhardtii
 brand: AlgalSexLab
 language: en
 keywords: 'science, biology, algae, cellular evolution, genetics laboratory, University of Manitoba'
-repository: Chlamy18/website
+repository: Chlamy18/algalsexlab
 repository_branch: main
 favicon: images/favicon.png
 thumbnail: images/thumbnail.jpg
 license_notice: |
   Except where otherwise noted, all content is licensed
   <a href="https://creativecommons.org/licenses/by/4.0/">CC-BY</a>.
-coc: https://github.com/leouieda/website/blob/main/CODE_OF_CONDUCT.md
+coc: https://main/CODE_OF_CONDUCT.md
 
 # Social media
 github: Chlamy18
