@@ -1,0 +1,64 @@
+- title: How lab handbooks can help shape research culture in your team
+  authors: [Me]
+  year: 2025
+  conference: Prosper PI Network
+  recording_vimeo: 1052328486
+  about: |
+    The <a target="_blank" href="https://prosper.liverpool.ac.uk/">Prosper
+    project</a>, a multi-institution training project in the UK, hosts a series
+    of online events called the "PI Network" which offers discussion and
+    training for early career researchers. I was invited to be a panelist and
+    presenter in this session about lab handbooks because of my work on the <a
+    target="_blank" href="https://www.compgeolab.org/manual/">CompGeoLab
+    manual</a>. It was a fun experience and I got to learn about other people
+    who make these types of guides for their research groups.
+
+- title: Magnetic fields and the flow of heat beneath Antarctica's ice sheets
+  authors: [Me]
+  year: 2023
+  conference: IAG Science Day
+  github: leouieda/iag-science-day-2023
+  slides: https://www.leouieda.com/iag-science-day-2023
+  recording: i9SW5p01Pvs&t=3240
+  about: |
+    Quick 4-minute talk about some of my research interests for the
+    2023 IAG Science Day at Universidade de São Paulo.
+    The slides were made with <a href="https://revealjs.com/">reveal.js</a>
+    using my <a href="https://github.com/leouieda/talk-template">open-source
+    HTML talk template</a>.
+
+- title: Getting started with Open Science
+  authors: [Me]
+  year: 2022
+  conference: SPIN-ITN workshop
+  github: leouieda/2022-05-06-spin-open-science
+  slides: https://www.leouieda.com/2022-05-06-spin-open-science
+  about: |
+    Presentation for a short workshop about open science practices for the
+    <a href="https://spin-itn.eu/">SPIN: Seismological Parameters and
+    INstrumentation doctoral training network</a>.
+    The slides were made with <a href="https://revealjs.com/">reveal.js</a>
+    using my <a href="https://github.com/leouieda/talk-template">open-source
+    HTML talk template</a>.
+
+- title: |
+    Academia e software livre: Desafios e oportunidades no Brasil e no
+    exterior
+  authors: [Me]
+  year: 2021
+  conference: National Observatory's SEG and EAGE Student Chapter, Brazil
+  github: leouieda/2021-07-22-on
+  recording: r2x-DN6laj8
+  slides: https://www.leouieda.com/2021-07-22-on
+  about: |
+    I had the pleasure of giving this talk to the SEG and EAGE Student
+    Chapter of the Observatório Nacional (where I went to grad school). It
+    was about my path through science and some tips for those wanting to go
+    abroad. Slides and talk were in Portuguese.
+    The slides were made with <a href="https://revealjs.com/">reveal.js</a>
+    using my <a href="https://github.com/leouieda/talk-template">open-source
+    HTML talk template</a>.
+  abstract: |
+    Palestra e bate papo com o National Observatory Greenstone Belt (SEG-EAGE
+    Student Chapter do Observatório Nacional) sobre minha carreira e dicas
+    para os alunos que quiserem trilhar um caminho parecido.

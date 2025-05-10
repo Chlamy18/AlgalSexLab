@@ -1,0 +1,70 @@
+- title: "Robust directional analysis of magnetic microscopy images using non-linear inversion and iterative Euler deconvolution"
+  year: 2025
+  authors: [Gelson, Me, Ricardo, Roger, Ualisson, Yago]
+  journal: EarthArXiv
+  doi: 10.31223/X5N42F
+  data: 10.5281/zenodo.15132658
+  github: compgeolab/micromag-interfering-sources
+  abstract: |
+    Scientists often study entire samples to understand their overall
+    properties, but this approach can miss important details. To get a clearer
+    picture, researchers are improving methods that focus on smaller regions of
+    a sample. In paleomagnetism, a field that studies the Earth's ancient
+    magnetic field, magnetic microscopy allows scientists to examine tiny areas
+    with high precision. In this study, we use magnetic microscopy data to
+    determine the direction of magnetization in samples. To do this, we apply
+    a mathematical method called Euler deconvolution, which helps solve complex
+    calculations and reduce uncertainty. We also refine our results with an
+    additional step that improves accuracy and removes unwanted signals. We
+    tested this approach on both simulated and real data. Our results show that
+    this new method can detect weaker magnetic sources and accurately determine
+    the direction of magnetization. When applied to real samples, it
+    successfully identified their original magnetic direction. This represents
+    an important step in using magnetic microscopy for paleomagnetic research.
+  about: |
+    This is the second contribution from Gelson's PhD thesis. We improved our
+    <a href"https://doi.org/10.1029/2023GC011082">original method</a> using an
+    iterative scheme to strip the effects of larger dipoles from the signal and
+    a non-linear inversion step. The result is that the new method is able to
+    cope with much denser distributions of magnetic particles.
+  citation: |
+    Souza-Junior, G. F., Uieda, L., Trindade, R. I. F., Fu, R. R., Bellon, U. D., and Castro, Y. M. (2025). Robust directional analysis of magnetic microscopy images using non-linear inversion and iterative Euler deconvolution. EarthArXiv. doi:10.31223/X5N42F
+
+- title: Giving software its due through community-driven review and publication
+  year: 2019
+  authors: [LBarba, JBazan, JBrown, RGuimera, MGymrek, AHanna, Lindsey, KHuff, DKatz, CMadan, KMoerman, KNiemeyer, JPoulson, PPrins, KRam, ARokem, Arfon, GThiruvathukal, KThyng, Me, BWilson, Yehudi]
+  journal: OSF Preprints
+  doi: 10.31219/osf.io/f4vx6
+  abstract: |
+    A recent editorial in Nature Methods, "Giving Software its Due",
+    described challenges related to the development of research software and
+    highlighted, in particular, the challenge of software publication and
+    citation. Here, we call attention to a system that we have developed that
+    enables community-driven software review, publication, and
+    citation: The Journal of Open Source Software (JOSS) is an open-source
+    project and an open access journal that provides a light-weight
+    publishing process for research software. Focused on and based in open
+    platforms and on a community of contributors, JOSS evidently satisfies a
+    pressing need, having already published more than 500 articles in
+    approximately three years of existence.
+  about: |
+    This correspondence was written by the editorial board of the
+    <a href="https://joss.theoj.org/">Journal of Open Source Software</a> in
+    response to the Nature Methods editorial
+    <a href="https://doi.org/10.1038/s41592-019-0350-x">"Giving Software its Due"</a>.
+    It was not accepted as a comment on the editorial so we published it as a
+    preprint instead.
+  citation: |
+    Barba, L. A., Bazán, J., Brown, J., Guimera, R. V., Gymrek, M., Hanna,
+    A., et al. (2019). Giving software its due through community-driven
+    review and publication. OSF Preprints. doi:10.31219/osf.io/f4vx6
+  bibtex: |
+    @article{Barba2019,
+      doi = {10.31219/osf.io/f4vx6},
+      url = {https://doi.org/10.31219/osf.io/f4vx6},
+      year = {2019},
+      month = apr,
+      publisher = {Center for Open Science},
+      author = {Lorena A. Barba and Juanjo Baz{\'{a}}n and Jed Brown and Roman Valls Guimera and Melissa Gymrek and Alex Hanna and Lindsey Justine Heagy and Kathryn D. Huff and Daniel S. Katz and Christopher R Madan and Kevin Mattheus Moerman and Kyle Evan Niemeyer and Jack L. Poulson and Pjotr Prins and Karthik Ram and Ariel Rokem and Arfon M. Smith and George K. Thiruvathukal and Kristen M. Thyng and Leonardo Uieda and Bruce E. Wilson and Yo Yehudi},
+      title = {Giving software its due through community-driven review and publication}
+    }

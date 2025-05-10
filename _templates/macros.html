@@ -1,0 +1,197 @@
+{# Macros to make the life easier across the website #}
+
+
+{%- macro figure(src, caption, style="", class="") -%}
+  <figure class="{{ class }}">
+    <img src="{{ src }}" alt="{{ caption|striptags }}" style="{{ style }}">
+    <figcaption>{{ caption }}</figcaption>
+  </figure>
+{%- endmacro -%}
+
+
+{%- macro social_icon(title, icon, url) -%}
+  <!-- The rel="me" attribute verifies for these profiles that I own this domain -->
+  <a rel="me" href="{{ url }}" target="_blank">
+    <i class="{{ icon }} fa-lg" title="{{ title }}" aria-label="{{ title }}"></i>
+  </a>
+{%- endmacro -%}
+
+
+{%- macro author_list(authors, config) -%}
+  {%- for author in authors %}
+    {%- if author == "Me" %}
+      <span class="authors-me">{{ config.coauthors[author] }}</span>
+    {%- else %}
+      {{ config.coauthors[author] }}
+    {%- endif %}
+    {%- if not loop.last -%};{%- endif -%}
+  {%- endfor %}
+{%- endmacro -%}
+
+
+{%- macro pretty_relative_link(page, reference) -%}
+  {%- if page.id == reference.id -%}
+    {%- set href = "." -%}
+  {%- else -%}
+    {%- set href = page.path|relative_to(reference.path)|replace('index.html', '') -%}
+  {%- endif -%}
+  {{ href }}
+{%- endmacro -%}
+
+
+{%- macro nav_link(item, page, site) -%}
+  {%- set aria = "" -%}
+  {%- set class = "" -%}
+  {%- set href = pretty_relative_link(site[item.id], page) -%}
+  {%- if page.id == item.id or page.parent == item.id|replace('/index', '') -%}
+    {%- set class = "active" -%}
+    {%- set aria = 'aria-current="page"' -%}
+    {%- set href = "." -%}
+  {%- endif -%}
+  <a class="{{ class }}" {{ aria }} href="{{ href }}">{{ item.name }}</a>
+{%- endmacro -%}
+
+
+{%- macro page_link(id, page, site) -%}
+  <a href="{{ site[id].path|relative_to(page.path) }}">{{ site[id].title }}</a>
+{%- endmacro -%}
+
+
+{%- macro youtube_link(id) -%}
+  {%- if id[:5] == "list:" %}
+    {%- set link = "https://www.youtube.com/playlist?list=" ~ id[5:] %}
+  {%- else %}
+    {%- set link = "https://www.youtube.com/watch?v=" ~ id %}
+  {%- endif %}
+  <a href="{{ link }}" target="_blank">{{ link }}</a>
+{%- endmacro -%}
+
+
+{%- macro vimeo_link(id) -%}
+  {%- set link = "https://vimeo.com/" ~ id %}
+  <a href="{{ link }}" target="_blank">{{ link }}</a>
+{%- endmacro -%}
+
+
+{%- macro doi_link(doi) -%}
+  <a href="https://doi.org/{{ doi }}" target="_blank">{{ doi }}</a>
+{%- endmacro -%}
+
+
+{%- macro github_link(repo) -%}
+  <i class="fab fa-github" aria-label="GitHub"></i>
+  <a href="https://github.com/{{ repo }}" target="_blank">{{ repo }}</a>
+{%- endmacro -%}
+
+
+{%- macro list_cv_items(data, config, numbered=False) -%}
+  {%- for item in data -%}
+    <div>
+      <p>
+        <span class="text-muted font-small">{{ item.year }}.</span>
+        {%- if numbered %}
+          <span class="font-small">[{{ "{:02d}".format(loop.revindex) }}]</span>
+        {%- endif %}
+        {{ item.title|trim }}.
+        {%- if item.institution is defined %}
+          <span class="text-muted">
+          {{ item.institution|trim }}{%- if item.country is defined %}, {{ item.country }}{%- endif %}.
+          </span>
+        {%- endif %}
+      </p>
+    <details>
+      <summary>Click for more information</summary>
+      <div class="details-body flow flow-small">
+        {%- if item.authors is defined %}
+          <p><strong>Authors:</strong> {{ author_list(item.authors, config) }}</p>
+        {%- endif %}
+        {%- if item.doi is defined %}
+          <p><strong>DOI:</strong> {{ doi_link(item.doi) }}</p>
+        {%- endif %}
+        {%- if item.preprint is defined %}
+          <p><strong>Preprint DOI (open access):</strong> {{ doi_link(item.preprint) }}</p>
+        {%- endif %}
+        {%- if item.github is defined %}
+          <p><strong>GitHub:</strong> {{ github_link(item.github) }}</p>
+        {%- endif %}
+        {%- if item.recording is defined %}
+          <p><strong>Recording:</strong> {{ youtube_link(item.recording) }}</p>
+        {%- endif %}
+        {%- if item.recording_vimeo is defined %}
+          <p><strong>Recording:</strong> {{ vimeo_link(item.recording_vimeo) }}</p>
+        {%- endif %}
+        {%- if item.data is defined %}
+          <p><strong>Data and code archive DOI:</strong> {{ doi_link(item.data) }}</p>
+        {%- endif %}
+        {%- if item.pdf is defined %}
+          <p><strong>PDF download:</strong> <a href="{{ item.pdf }}" target="_blank">{{ item.pdf[7:] }}</a></p>
+        {%- endif %}
+        {%- if item.slides is defined %}
+          <p><strong>Slides:</strong> <a href="{{ item.slides }}" target="_blank">{{ item.slides }}</a></p>
+        {%- endif %}
+        {%- if item.poster is defined %}
+          <p><strong>Poster:</strong> <a href="{{ item.poster }}" target="_blank">{{ item.poster }}</a></p>
+        {%- endif %}
+        {%- if item.department is defined %}
+          <p><strong>Department:</strong> {{ item.department }}</p>
+        {%- endif %}
+        {%- if item.thesis is defined %}
+          <p><strong>Thesis:</strong> {{ item.thesis }}</p>
+        {%- endif %}
+        {%- if item.funder is defined %}
+          <p><strong>Funding agency:</strong> {{ item.funder }}</p>
+        {%- endif %}
+        {%- if item.committee is defined %}
+          <p><strong>Committee:</strong> {{ item.committee }}</p>
+        {%- endif %}
+        {%- if item.advisor is defined %}
+          <p><strong>Advisor:</strong> {{ item.advisor }}</p>
+        {%- endif %}
+        {%- if item.coadvisor is defined %}
+          <p><strong>Co-advisor(s):</strong> {{ item.coadvisor }}</p>
+        {%- endif %}
+        {%- if item.award is defined %}
+          <p><strong>Award:</strong> <a href="{{ item.award_link }}" target="_blank">{{ item.award }}</a></p>
+        {%- endif %}
+        {%- if item.award_amount is defined %}
+          <p><strong>Amount:</strong> {{ item.award_amount }}</p>
+        {%- endif %}
+        {%- if item.journal is defined %}
+          <p><strong>Journal:</strong> {{ item.journal }}</p>
+        {%- endif %}
+        {%- if item.event is defined %}
+          <p><strong>Event:</strong> {{ item.event }}</p>
+        {%- endif %}
+        {%- if item.conference is defined %}
+          <p><strong>Conference:</strong> {{ item.conference }}</p>
+        {%- endif %}
+        {%- if item.doi is defined %}
+          <p><strong>Citations:</strong>
+            <span class="__dimensions_badge_embed__" data-doi="{{ item.doi }}" data-legend="always" data-style="small_circle"></span>
+          </p>
+        {%- endif %}
+        {%- if item.about is defined %}
+          <p><strong>About:</strong> {{ item.about }}</p>
+        {%- endif %}
+        {%- if item.roles is defined %}
+          <p><strong>Roles:</strong>
+          <ul>
+          {%- for role in item.roles %}
+            <li><span class="text-muted font-small">{{ role.date }}.</span> {{ role.title }}</li>
+          {%- endfor %}
+          </ul>
+        {%- endif %}
+        {%- if item.citation is defined %}
+          <p><strong>Citation:</strong> {{ item.citation}}</p>
+        {%- endif %}
+        {%- if item.poster_img is defined %}
+          <img src="{{ item.poster_img }}" alt="Screenshot of the poster">
+        {%- endif %}
+        {%- if item.abstract is defined %}
+          <p><strong>Abstract:</strong> {{ item.abstract }}</p>
+        {%- endif %}
+      </div>
+    </details>
+  </div>
+  {%- endfor -%}
+{%- endmacro -%}

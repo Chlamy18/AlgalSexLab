@@ -1,0 +1,85 @@
+- title: Professor Doutor
+  institution: Univeridade de São Paulo
+  department: Departamento de Geofísica - Instituto de Astronomia, Geofísica e Ciências Atmosféricas
+  country: Brazil
+  year: 2023 - present
+  about: |
+    In April 2023, I applied and was selected for a Professor position at my
+    <em>alma mater</em>. As part of the selection process, I wrote an
+    <a href="https://github.com/leouieda/memorial">academic auto-biography (in Portuguese)</a>,
+    which provided an excellent opportunity to reflect back on my career, try
+    to find meaning in what I've accomplished, and plan where to invest my time
+    and energy going forward. On 21 August 2023, I started this new chapter.
+  roles:
+    - date: 03/2025 - present
+      title: Representante da categoria MS-3 no Conselho do Departamento de Geofísica
+    - date: 04/2024 - present
+      title: Presidente da Comissão de Cooperação Nacional e Internacional
+    - date: 04/2024 - present
+      title: Membro Suplente da Comissão da Biblioteca
+    - date: 01/2024 - present
+      title: Membro da Comissão de Qualificações do Programa de Geofísica
+    - date: 12/2023 - present
+      title: Coordenador do Ciclo de Seminários do Departamento de Geofísica do IAG/USP
+    - date: 10/2023 - present
+      title: Representante Titular do IAG no Comitê Gestor do Banco Nacional de Dados Gravimétricos (BNDG)
+    - date: 10/2023 - present
+      title: Membro Titular da Comissão de Cooperação Nacional e Internacional
+    - date: 10/2023 - present
+      title: Membro Suplente da Comissão de Informática
+
+- title: Lecturer in Geophysics
+  institution: University of Liverpool
+  department: Department of Earth, Ocean and Ecological Sciences - School of Environmental Sciences
+  country: UK
+  year: 2019 - 2023
+  about: |
+    After 2.5 years in Hawaiʻi, I was offered a position to join the Geophysics group
+    of the University of Liverpool's
+    <a href="https://www.liverpool.ac.uk/earth-ocean-and-ecological-sciences/">Department
+    of Earth, Ocean and Ecological Sciences</a> on 19 August 2019.
+    This was an exciting opportunity to start my own research group and
+    navigate the UK system, which was entirely new to me.
+    I spent 4 years at Liverpool, with great friends and colleagues, and had
+    an overall good time.
+    But I felt that the time had come to return home to Brazil, to be closer
+    to family and also to once more be a part of a public university system
+    that has a strong social justice agenda, like we have in Brazil.
+  roles:
+    - date: 2022 - 2023
+      title: Programme Director for Geophysics
+    - date: 2022 - 2023
+      title: Admissions Tutor for Geophysics
+    - date: 2020 - 2023
+      title: Early Career Academic (ECA) Representative for Earth Sciences
+    - date: 2020 - 2022
+      title: Department committee for web presence (website, social media, etc.)
+
+- title: Visiting Researcher
+  institution: University of Hawaiʻi at Mānoa
+  department: Department of Earth Sciences - School of Ocean and Earth Science and Technology
+  country: USA
+  year: 2017 - 2019
+  about: |
+    This was a mix of a sabbatical from UERJ and a postdoc position. I took a
+    leave of absence for 1 year to work with the Generic Mapping Tools team to
+    create PyGMT, a widely-used Python library for processing and visualizing
+    geophysical data. After this first year was done, I quit my job at UERJ and
+    stayed in this role, which was funded for 2.5 years.
+
+- title: Professor Assistente
+  institution: Universidade do Estado do Rio de Janeiro
+  department: Departamento de Geologia Aplicada - Faculdade de Geologia
+  country: Brazil
+  year: 2014 - 2018
+  about: |
+    This was my first academic position, which I got while still working on my
+    PhD thesis.
+    It was a great opportunity to gain some experience,
+    particularly in teaching, which turned out to be the thing I like the most
+    about the job.
+  roles:
+    - date: 2015
+      title: Chair of the Election Committee for the deans of the University and the School of Geology
+    - date: 2015 - 2017
+      title: Faculty Advisor for the Society of Exploration Geophysicists (SEG) Student Chapter

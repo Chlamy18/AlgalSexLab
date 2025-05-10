@@ -1,0 +1,73 @@
+# Main site info
+author: Jae-Hyeok Lee
+email: jaehyeok.lee@umanitoba.ca
+domain: "algalsexlab.info"
+url: "https://www.algalsexlab.info"
+site_name: Algal Sexual Development Laboratory at University of Manitoba
+site_description: Developmental Evolutionary Biology, Molecular Genetics, University of Manitoba, Laboratory Researcher, Chlamydomonas reinhardtii
+brand: AlgalSexLab
+language: en
+keywords: 'science, biology, algae, cellular evolution, genetics laboratory, University of Manitoba'
+repository: Chlamy18/website
+repository_branch: main
+favicon: images/favicon.png
+thumbnail: images/thumbnail.jpg
+license_notice: |
+  Except where otherwise noted, all content is licensed
+  <a href="https://creativecommons.org/licenses/by/4.0/">CC-BY</a>.
+coc: https://github.com/leouieda/website/blob/main/CODE_OF_CONDUCT.md
+
+# Social media
+github: Chlamy18
+linkedin: 
+youtube: 
+orcid: 0000-
+researcherid: 
+googlescholar: https://scholar.google.ca/citations?user=hhmk8owAAAAJ
+
+links:
+  Chlamydomonas Resource Center: https://www.chlamydomonas.org
+  Uniprot: https://www.uniprot.org/
+  Phytozome: https://phytozome.jgi.doe.gov/
+
+# Menu
+navigation:
+  - name: Home
+    id: index
+  - name: About
+    id: about/index
+  - name: Blog
+    id: blog/index
+  - name: CV
+    id: cv/index
+  - name: Contact
+    id: contact/index
+navigation_footer:
+  - name: Home
+    id: index
+  - name: About
+    id: about/index
+  - name: Blog
+    id: blog/index
+  - name: CV
+    id: cv/index
+  - name: Contact
+    id: contact/index
+  - name: Links
+    id: links/index
+  - name: Now
+    id: now/index
+
+# Don't copy or process these files
+ignore:
+  - README.md
+  - LICENSE.md
+  - CODE_OF_CONDUCT.md
+  - environment.yml
+  - requirements.txt
+  - Makefile
+  - css/academicons/README.md
+
+# My co-authors
+coauthors:
+  Me: Lee, Jae-Hyeok

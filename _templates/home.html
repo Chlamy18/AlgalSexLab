@@ -1,0 +1,33 @@
+{#
+  Template for the main landing page. Used to insert a list of recent posts at
+  the end. Cannot be done in the Markdown file because Nene isn't done creating
+  all posts when it renders that template.
+#}
+{% extends "base.html" %}
+
+{% import "macros.html" as macros %}
+
+{%- block content %}
+  {{ page.body }}
+
+  <h2>Some blog posts</h2>
+
+  <ul class="flow" role="list">
+  {%- for item in (site["blog/index"]["siblings"]|sort(attribute="date", reverse=True))[:3] %}
+    <li>
+      <a class="font-large" href="{{ item.path|relative_to(page.path) }}">{{ item.title }}</a>
+      <p class="font-small text-muted">{{ item.date }}</p>
+      <p class="font-small">{{ item.body|striptags|trim|truncate(300) }}</p>
+    </li>
+  {%- endfor %}
+  </ul>
+
+  <hr>
+
+  <p class="text-right">
+    <a href="{{ site["blog/index"].path|relative_to(page.path) }}">
+      More from the blog
+      <i class="far fa-arrow-alt-circle-right" aria-hidden="true"></i>
+    </a>
+  </p>
+{%- endblock %}

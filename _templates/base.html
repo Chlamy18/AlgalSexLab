@@ -1,0 +1,213 @@
+{%- import "macros.html" as macros -%}
+
+<!DOCTYPE html>
+<html lang="{{ config.language }}">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  {%- if page.custom_page_title is defined %}
+    {%- set title = page.custom_page_title|striptags|e %}
+  {%- else %}
+    {%- set title = page.title|striptags|e + " | " + config.site_name|striptags|e %}
+  {%- endif %}
+  <title>{{ title }}</title>
+
+  {%- if config.favicon is defined %}
+  <link rel="shortcut icon" href="{{ config.favicon|relative_to(page.path)|e }}" />
+  {%- endif %}
+
+  <!-- OpenGraph social media card -->
+  {%- if page.description is defined -%}
+    {% set description = page.description|striptags|trim  %}
+  {%- elif page.banner_subtitle -%}
+    {% set description = page.banner_subtitle|striptags|trim %}
+  {%- else -%}
+    {% set description = page.body|striptags|trim|truncate(200) %}
+  {%- endif %}
+  {%- if page.custom_page_title is defined %}
+    {%- set ogtitle = page.custom_page_title|striptags|e %}
+  {%- else %}
+    {%- set ogtitle = page.title|striptags|e %}
+  {%- endif %}
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="{{ ogtitle }}" />
+  <meta property="og:description" content="{{ description }}" />
+  <meta property="og:image" content="{{ config.url }}/{{ config.thumbnail }}" />
+  <meta property="og:url" content="{{ config.url }}/{{ page.path }}" />
+
+  <!-- FontAwsome -->
+  <link rel="stylesheet" href="{{ "pkg/fontawesome/css/all.css"|relative_to(page.path) }}" />
+
+  <!-- Academicons -->
+  <link rel="stylesheet" href="{{ "pkg/academicons-1.9.1/css/academicons.min.css"|relative_to(page.path) }}" />
+
+  <!-- Atkinson Hyperlegible font -->
+  <link rel="stylesheet" href="{{ "pkg/atkinson-hyperlegible/fonts.css"|relative_to(page.path) }}" />
+
+  <!-- Ubuntu Mono font -->
+  <link rel="stylesheet" href="{{ "pkg/ubuntu-mono/fonts.css"|relative_to(page.path) }}" />
+
+  <!-- KaTeX -->
+  <link rel="stylesheet" href="{{ "pkg/katex-0.15.3/katex.min.css"|relative_to(page.path) }}" integrity="sha384-KiWOvVjnN8qwAZbuQyWDIbfCLFhLXNETzBQjA/92pIowpC0d2O3nppDGQVgwd2nB" />
+
+  <!-- Andy Bell's CSS reset -->
+  <link rel="stylesheet" href="{{ "css/reset.css"|relative_to(page.path) }}" />
+
+  <!-- Main CSS stylesheet -->
+  <link rel="stylesheet" href="{{ "css/style.css"|relative_to(page.path) }}" />
+
+  <!-- Plausible analytics for anonymous usage statistics -->
+  <script defer data-domain="{{ config.domain }}" src="https://plausible.io/js/plausible.js"></script>
+
+  {%- block extrahead %}{% endblock %}
+
+</head>
+
+<body>
+  <header>
+    <div class="spread content-wide">
+      <a aria-label="Home" class="font-bold" href="{{ macros.pretty_relative_link(site['index'], page) }}">{{ config.brand }}</a>
+      <nav aria-label="Main">
+        <ul class="list-inline" role="list">
+          {%- for item in config.navigation %}
+            <li>
+              {{ macros.nav_link(item, page, site) }}
+            </li>
+          {%- endfor %}
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="flow">
+    {%- if page.banner_image is defined %}
+      {%- if page.banner_position is defined %}
+        {%- set banner_position = page.banner_position %}
+      {%- else %}
+        {%- set banner_position = "top center" %}
+      {%- endif %}
+      <div class="banner"
+           style="background-image: url({{ page.banner_image|relative_to(page.path) }}); background-position: {{ banner_position }};" >
+        <div class="banner-overlay">
+        </div>
+        <div class="banner-text flow">
+          {%- if page.banner_title is defined %}
+            <h1>
+              {{ page.banner_title }}
+            </h1>
+          {%- endif %}
+          {%- if page.banner_subtitle is defined %}
+            <p>
+              {{ page.banner_subtitle }}
+            </p>
+          {%- endif %}
+        </div>
+      </div>
+    {%- endif %}
+
+    <div class="content flow">
+      {%- block content %}
+        {{ page.body }}
+      {%- endblock %}
+    </div>
+  </main>
+
+  <footer class="flow">
+    <div class="content-wide flow">
+      <nav aria-label="Footer">
+        <ul class="list-inline" role="list">
+        {%- for item in config.navigation_footer %}
+          <li>
+            {{ macros.nav_link(item, page, site) }}
+          </li>
+        {%- endfor %}
+        </ul>
+      </nav>
+      <ul class="list-inline social-icons" role="list">
+        <li>
+          {{ macros.social_icon("Mastodon", "fab fa-mastodon", "https://" + config.mastodon_server + "/@" + config.mastodon) }}
+        </li>
+        <li>
+          {{ macros.social_icon("LinkedIn", "fab fa-linkedin", "https://www.linkedin.com/in/" + config.linkedin) }}
+        </li>
+        <li>
+          {{ macros.social_icon("GitHub", "fab fa-github", "https://github.com/" + config.github) }}
+        </li>
+        <li>
+          {{ macros.social_icon("YouTube", "fab fa-youtube", "https://www.youtube.com/@" + config.youtube) }}
+        </li>
+        <li>
+          {{ macros.social_icon("ORCID", "ai ai-orcid", "https://orcid.org/" + config.orcid) }}
+        </li>
+        <li>
+          {{ macros.social_icon("ImpactStory", "ai ai-impactstory", "https://profiles.impactstory.org/u/" + config.orcid) }}
+        </li>
+        <li>
+          {{ macros.social_icon("ResearchGate", "ai ai-researchgate", config.researchgate) }}
+        </li>
+        <li>
+          {{ macros.social_icon("figshare", "ai ai-figshare", config.figshare) }}
+        </li>
+        <li>
+          {{ macros.social_icon("ResearcherID", "ai ai-researcherid", "https://www.webofscience.com/wos/author/rid/" + config.researcherid) }}
+        </li>
+        <li>
+          {{ macros.social_icon("Scopus", "ai ai-scopus", "https://www.scopus.com/authid/detail.uri?authorId=" + config.scopus) }}
+        </li>
+        <li>
+          {{ macros.social_icon("Currículo Lattes", "ai ai-lattes", "https://lattes.cnpq.br/" + config.lattes) }}
+        </li>
+        <li>
+          {{ macros.social_icon("Google Scholar", "ai ai-google-scholar", config.googlescholar) }}
+        </li>
+      </ul>
+      <section class="footer-text flow">
+        <p>
+          Built on {{ build.today.strftime('%Y/%m/%d') }} with <a href="https://nene.leouieda.com">Nēnē</a> {{ build.nene_version }}
+          from source code at
+          {{ macros.github_link(config.repository) }}
+          / <i class="fas fa-history fa-sm"></i> <a href="https://github.com/{{ config.repository }}/commit/{{ build.commit }}"><code>{{ build.commit }}</code></a>.
+          <strong>
+          Found a typo/mistake?
+          <a target="_blank" href="https://github.com/{{ config.repository }}/edit/{{ config.repository_branch }}/{{ page.source }}">
+            Send a fix through GitHub
+            <i class="fa fa-code-branch" aria-hidden="true"></i>
+          </a>
+          </strong>
+        </p>
+        <p>
+          Visitor statistics are gathered anonymously and without tracking by
+          <a href="https://plausible.io">Plausible</a> and can be viewed
+          at
+          <a href="https://plausible.io/{{ config.domain }}">plausible.io/{{ config.domain }}</a>.
+        </p>
+        <p>
+          Copyright &copy; {{ build.today.year }} {{ config.author }}.
+          {%- if config.license_notice is defined %}
+            {{ config.license_notice }}
+          {%- endif %}
+        </p>
+      </section>
+    </div>
+  </footer>
+
+  <!-- KaTeX -->
+  <script defer src="{{ "pkg/katex-0.15.3/katex.min.js"|relative_to(page.path) }}" integrity="sha384-0fdwu/T/EQMsQlrHCCHoH10pkPLlKA1jL5dFyUOvB3lfeT2540/2g6YgSi2BL14p" crossorigin="anonymous"></script>
+  <script defer src="{{ "pkg/katex-0.15.3/auto-render.min.js"|relative_to(page.path) }}" integrity="sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR" crossorigin="anonymous"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      renderMathInElement(document.body, {
+        delimiters: [
+          {left: '$$', right: '$$', display: true},
+          {left: '$', right: '$', display: false},
+        ],
+      });
+    });
+  </script>
+
+  <!-- Dimensions -->
+  <script async src="https://badge.dimensions.ai/badge.js" charset="utf-8"></script>
+
+</body>
+</html>

@@ -1,0 +1,185 @@
+- title: Fellow of the Higher Education Academy
+  institution: University of Liverpool
+  country: UK
+  thesis: A review of peer-observation in higher education
+  github: leouieda/pgcap
+  doi: 10.6084/m9.figshare.28401473
+  year: 2020 - 2022
+  about: |
+    During my time as Lecturer at the University of Liverpool, UK, I took the
+    Postgraduate Certificate in Academic Practice (PGCAP) course between
+    November 2020 and May 2022. The course was composed of 2 modules ADEV700
+    2020/21 and ADEV701 2021/22 totaling about 600h of study.
+    I build a <a target="_blank" href="https://www.leouieda.com/pgcap">Portfolio
+    of Activity</a> for the modules, which includes a review of
+    peer-observation strategies as my research project.
+    Completing the course granted me the title of <a target="_blank"
+    href="https://www.advance-he.ac.uk/fellowship/fellowship">Fellow of Higher
+    Education Academy</a> (reference number PR242069).
+
+- title: Instructor training
+  institution: The Carpentries
+  country: USA
+  year: 2018
+  about: |
+    In person training for certification as an instructor of <a target="_blank"
+    href="https://software-carpentry.org/">Software Carpentry</a>. The training
+    covers various aspects of the theory and practice of teaching computing.
+    Done at the 2018 Scipy Conference.
+
+- title: PhD in Geophysics
+  institution: Observatório Nacional
+  country: Brazil
+  thesis: Forward modeling and inversion of gravitational fields in spherical coordinates
+  advisor: Valéria C. F. Barbosa
+  funder: CAPES
+  github: leouieda/phd-thesis
+  doi: 10.6084/m9.figshare.16883689
+  year: 2011 - 2016
+  slides: https://speakerdeck.com/leouieda/phd-defense
+  about: |
+    After my Master's degree, I stayed at the Observatório Nacional for my
+    PhD, also with <a href="https://www.pinga-lab.org/people/barbosa.html">Valéria C. F. Barbosa</a>.
+    I received the Brazilian Geophysical Society (SBGf)
+    <a href="https://sbgf.org.br/premiacoes">Best PhD Thesis of 2015-2017</a>
+    award for my work.
+  abstract: |
+    We present methodological improvements to forward modeling and regional
+    inversion of satellite gravity data. For this purpose, we developed two
+    open-source software projects. The first is a C language suite of
+    command-line programs called Tesseroids. The programs calculate the
+    gravitational potential, acceleration, and gradient tensor of a spherical
+    prism, or tesseroid. Tesseroids implements and extends an adaptive
+    discretization algorithm to automatically ensure the accuracy of the
+    computations. Our numerical experiments show that, to achieve the same
+    level of accuracy, the gravitational acceleration components require
+    finner discretization than the potential. In turn, the gradient tensor
+    requires finner discretization still than the acceleration. The second
+    open-source project is Fatiando a Terra, a Python language library for
+    inversion, forward modeling, data processing, and visualization. The
+    library allows the user to combine the forward modeling and inversion
+    tools to implement new inversion methods. The gravity forward modeling
+    tools include an implementation of the algorithm used in the Tesseroids
+    software. We combined the inversion and tesseroid forward modeling
+    utilities of Fatiando a Terra to develop a new method for fast non-linear
+    gravity inversion. The method estimates the depth of the crust-mantle
+    interface (the Moho) based on observed gravity data using a spherical
+    Earth approximation. We extended the computationally efficient Bott's
+    method to include smoothness regularization and use tesseroids instead
+    right rectangular prisms. The inversion is controlled by three
+    hyper-parameters: the regularization parameter, the density-contrast
+    between the real Earth and the reference model (the Normal Earth), and
+    the depth of the Moho of the Normal Earth. We employ two cross-validation
+    procedures to automatically estimate these parameters. Tests on synthetic
+    data confirm the capability of the proposed method to estimate smoothly
+    varying Moho depths and the three hyper-parameters. Finally, we applied
+    the inversion method developed to produce a Moho depth model for South
+    America. The estimated Moho depth model fits the gravity data and
+    seismological Moho depth estimates in the oceanic areas and the central
+    and eastern portions of the continent. We observe large misfits in the
+    Andes region, where Moho depth is largest. In Amazon, Solimões, and
+    Paraná Basins, the model fits the observed gravity but disagrees with
+    seismological estimates. These discrepancies suggest the existence of
+    density-anomalies in the crust or upper mantle, as has been suggested in
+    the literature.
+
+- title: MSc in Geophysics
+  institution: Observatório Nacional
+  country: Brazil
+  thesis: Robust 3D gravity gradient inversion by planting anomalous densities
+  advisor: Valéria C. F. Barbosa
+  funder: CAPES
+  github: pinga-lab/paper-planting-densities
+  doi: 10.6084/m9.figshare.16882300.v1
+  year: 2010 - 2011
+  slides: https://speakerdeck.com/leouieda/masters-defense
+  about: |
+    I did my Master's degree in Geophysics at the Observatório Nacional in
+    Rio de Janeiro, Brazil, under the supervision of <a
+    href="https://www.pinga-lab.org/people/barbosa.html">Valéria C. F.
+    Barbosa</a>. I started in March 2010 and defended my dissertation in
+    October 2011.
+    The method that we developed is implemented in the software
+    <a href="https://www.fatiando.org">Fatiando a Terra</a>.
+    The dissertation was later published as the paper
+    "<a href="https://doi.org/10.1190/geo2011-0388.1">Robust 3D gravity gradient inversion by planting anomalous densities</a> (2012)"
+  abstract: |
+    We have developed a new gravity gradient inversion method for estimating
+    a 3D density-contrast distribution defined on a grid of rectangular
+    prisms. Our method consists of an iterative algorithm that does not
+    require the solution of an equation system. Instead, the solution grows
+    systematically around user-specified prismatic elements, called "seeds",
+    with given density contrasts. Each seed can be assigned a different
+    density-contrast value, allowing the interpretation of multiple sources
+    with different density contrasts and that produce interfering signals. In
+    real world scenarios, some sources might not be targeted for the
+    interpretation. Thus, we developed a robust procedure that neither
+    requires the isolation of the signal of the targeted sources prior to the
+    inversion nor requires substantial prior information about the
+    nontargeted sources. In our iterative algorithm, the estimated sources
+    grow by the accretion of prisms in the periphery of the current estimate.
+    In addition, only the columns of the sensitivity matrix corresponding to
+    the prisms in the periphery of the current estimate are needed for the
+    computations. Therefore, the individual columns of the sensitivity matrix
+    can be calculated on demand and deleted after an accretion takes place,
+    greatly reducing the demand for computer memory and processing time.
+    Tests on synthetic data show the ability of our method to correctly
+    recover the geometry of the targeted sources, even when interfering
+    signals produced by nontargeted sources are present. Inverting the data
+    from an airborne gravity gradiometry survey flown over the iron ore
+    province of Quadrilátero Ferrífero, southeastern Brazil, we estimated a
+    compact iron ore body that is in agreement with geologic information and
+    previous interpretations.
+
+- title: International Exchange
+  institution: York University
+  country: Canada
+  year: 2008 - 2009
+  about: |
+    In the fourth year of my BSc degree, I went on an international exchange
+    program to York University to study in their Geomatics Engineering degree.
+    I spent the year learning about geodesy, gravimetry, positioning, and
+    least-squares adjustment, all of which I still use to this day.
+    I also had a great time in Toronto and got to make a bunch of international
+    friends.
+
+- title: BSc in Geophysics
+  institution: Universidade de São Paulo
+  country: Brazil
+  thesis: Cálculo do tensor gradiente gravimétrico utilizando tesseroides
+  advisor: Naomi Ussami
+  github: leouieda/barchelor-thesis
+  doi: 10.6084/m9.figshare.963547
+  year: 2004 - 2009
+  slides: https://speakerdeck.com/leouieda/bachelors-defense
+  about: |
+    My Bachelor's degree in Geophysics is from the Universidade de São Paulo,
+    Brazil, where I studied from 2004 until 2009. I did an undergraduate
+    research project and eventually my thesis under the supervision of
+    <a href="http://lattes.cnpq.br/6704246490515612">Naomi Ussami</a>.
+    This was when I started development of the software
+    <a href="https://github.com/leouieda/tesseroids">Tesseroids</a> and the
+    research that lead to the paper which is the first part of my PhD thesis:
+    "<a href="https://doi.org/10.1190/geo2015-0204.1">Tesseroids: forward modeling gravitational fields in spherical coordinates</a> (2016)".
+  abstract: |
+    The GOCE satellite mission has the objective of measuring the Earths
+    gravitational field with an unprecedented accuracy through the
+    measurement of the gravity gradient tensor (GGT). The data provided by
+    this mission could be used to study large areas, where the flat Earth
+    approximation can have its limitations. In these cases the modeling could
+    be done with tesseroids, also called spherical prisms, in order to take
+    the Earths curvature into account. The GGT caused by a tesseroid can be
+    calculated with numerical integration methods, such as the Gauss-Legendre
+    Quadrature (GLQ). In the current project, a computer program was
+    developed for the direct calculation of the GGT using the GLQ. The
+    accuracy of this implementation was evaluated by comparing its results
+    with the result of analytical formulas for the special case of a
+    spherical cap. Next, the developed program was used to calculate the
+    differences in the GGT caused by the flat Earth approximation. These
+    differences reach are up to 30% in the Tzz component for a 50 deg x 50
+    deg x 10 km model. Finally, the computer program was used to calculate
+    the effect caused by the topographic masses on the GGT at 250 km altitude
+    for the Paraná basin region. In regions of large topographical
+    variations, the components of the GGT due to the topographic masses have
+    amplitudes of the same order of magnitude as the GGT components due to
+    density anomalies in the interior of the crust and mantle.
